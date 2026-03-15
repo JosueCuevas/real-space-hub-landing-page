@@ -1,11 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Solution from '../components/Solution.astro';
+import DemoShowcase from '../components/DemoShowcase.astro';
+import Benefits from '../components/Benefits.astro';
+import UseCases from '../components/UseCases.astro';
+import ImplementationProcess from '../components/ImplementationProcess.astro';
+import Pricing from '../components/Pricing.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Welcome to Real Space Hub Landing Page
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout 
+  title="Real Space Hub | Digitaliza tus ventas inmobiliarias" 
+  description="Plataforma SaaS para acelerar ventas de desarrolladores inmobiliarios. Visualización en tiempo real y cotizaciones interactivas."
+>
+  <Header />
+  <main>
+    <Hero />
+    <Problem />
+    <Solution />
+    <DemoShowcase />
+    <Benefits />
+    <Pricing />
+    <UseCases />
+    <ImplementationProcess />
+    <FinalCTA />
+  </main>
+  <Footer />
+</MainLayout>

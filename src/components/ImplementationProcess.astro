@@ -1,0 +1,51 @@
+---
+// ImplementationProcess.astro
+const steps = [
+  { 
+    num: "1", 
+    title: "Análisis del desarrollo", 
+    desc: "Revisamos tu lista de precios, material gráfico (renders/planos) y reglas de negocio." 
+  },
+  { 
+    num: "2", 
+    title: "Configuración y Setup", 
+    desc: "Digitalizamos tus planos con zonas interactivas (hotspots) y programamos tu cotizador." 
+  },
+  { 
+    num: "3", 
+    title: "Publicación Digital", 
+    desc: "Te entregamos el ecosistema listo para comenzar a usarlo." 
+  },
+  { 
+    num: "4", 
+    title: "Onboarding Comercial", 
+    desc: "Capacitamos a tu equipo de ventas para que aprovechen al máximo la plataforma desde el día 1." 
+  }
+];
+---
+<section class="py-24 bg-primary overflow-hidden relative border-t border-quaternary">
+  <!-- subtle gradient line -->
+  <div class="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-tertiary/50 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold text-theme-white mb-4">Implementación sin dolores de cabeza</h2>
+    <p class="text-secondary max-w-2xl mx-auto mb-16 text-lg">Nuestro equipo de expertos inmobiliarios y tech se encarga del trabajo pesado. Tú solo nos envías la información y nosotros orquestamos la magia.</p>
+    
+    <!-- Timeline Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+      <!-- connector line md+ -->
+      <div class="hidden md:block absolute top-8 left-0 w-full h-0.5 bg-quaternary z-0"></div>
+
+      {steps.map((step) => (
+        <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left bg-quaternary/30 md:bg-transparent p-6 md:p-0 rounded-2xl border border-quaternary md:border-none">
+          <div class="w-16 h-16 rounded-full bg-primary border-2 border-tertiary/40 text-theme-white flex items-center justify-center text-2xl font-black mb-6 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+            {step.num}
+          </div>
+          <h3 class="text-xl font-bold text-theme-white mb-2">{step.title}</h3>
+          <p class="text-secondary text-sm leading-relaxed">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+    
+  </div>
+</section>

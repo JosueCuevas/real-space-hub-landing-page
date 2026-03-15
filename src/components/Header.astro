@@ -1,0 +1,105 @@
+---
+import { Image } from 'astro:assets';
+import logoHorizontal from '../assets/logos/horizontal.png';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary/80 backdrop-blur-md border-b border-quaternary/50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <div class="shrink-0 flex items-center">
+        <a href="/" class="block transition-transform hover:scale-105">
+          <Image 
+            src={logoHorizontal} 
+            alt="Real Space Hub Logo" 
+            class="h-10 w-auto object-contain" 
+            loading="eager"
+          />
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#beneficios" class="text-sm font-medium text-secondary hover:text-theme-white transition-colors">
+          Beneficios
+        </a>
+        <a href="#pricing" class="text-sm font-medium text-secondary hover:text-theme-white transition-colors">
+          Pricing
+        </a>
+        <a href="#showcase" class="px-6 py-2.5 text-sm font-bold text-primary bg-theme-white rounded-full hover:bg-tertiary transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]">
+          Demo
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-btn" class="text-secondary hover:text-theme-white p-2 focus:outline-none hover:cursor-pointer transition-colors" aria-label="Toggle menu">
+          <svg id="menu-icon" class="h-6 w-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="h-6 w-6 hidden transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-md border-b border-quaternary/50 overflow-hidden transition-all duration-300 ease-in-out opacity-0 pointer-events-none -translate-y-4 shadow-lg">
+    <div class="px-4 pt-4 pb-6 space-y-4 flex flex-col border-t border-quaternary/30">
+      <a href="#beneficios" class="block px-3 py-2 text-base font-medium text-secondary hover:text-theme-white hover:bg-quaternary/30 rounded-md transition-colors mobile-link">
+        Beneficios
+      </a>
+      <a href="#pricing" class="block px-3 py-2 text-base font-medium text-secondary hover:text-theme-white hover:bg-quaternary/30 rounded-md transition-colors mobile-link">
+        Pricing
+      </a>
+      <a href="#showcase" class="block px-3 py-2 text-base font-bold text-primary bg-theme-white rounded-md text-center hover:bg-tertiary transition-all mobile-link mt-4">
+        Demo
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Script para manejar la visibilidad y animación del menú móvil
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      if (!mobileMenu || !menuIcon || !closeIcon) return;
+      
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        // Mostrar menú
+        mobileMenu.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+        mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        // Ocultar menú
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+        mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+    }
+
+    // Cerrar el menú al hacer clic en cualquier enlace
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+  });
+</script>

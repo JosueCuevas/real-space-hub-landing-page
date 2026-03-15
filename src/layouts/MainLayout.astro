@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import favicon from "../assets/icons/favicon.svg";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href={favicon.src} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body class="bg-primary text-theme-white font-sans antialiased selection:bg-quaternary/50">
+		<div class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(167,167,167,0.15),rgba(255,255,255,0))]"></div>
+		
+		<slot />
+		
+	</body>
+</html>

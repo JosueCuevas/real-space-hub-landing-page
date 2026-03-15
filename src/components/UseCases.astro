@@ -1,0 +1,26 @@
+---
+// UseCases.astro
+const cases = [
+  { title: "Desarrollos Verticales", bg: "bg-quaternary/40 border-quaternary/60" },
+  { title: "Preventas Residenciales", bg: "bg-quaternary/30 border-quaternary/50" },
+  { title: "Master Plans", bg: "bg-quaternary/20 border-quaternary/40" },
+  { title: "Proyectos Turísticos", bg: "bg-tertiary/20 border-tertiary/40 text-primary" },
+  { title: "Agencias y Master Brokers", bg: "bg-secondary/20 border-secondary/40" }
+];
+---
+<section class="py-24 bg-primary">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="mb-12 max-w-3xl">
+      <h2 class="text-3xl font-bold text-theme-white mb-4">Adaptable a cualquier escala inmobiliaria</h2>
+      <p class="text-secondary text-lg">No importa si vendes un edificio de usos mixtos o un desarrollo de lotes vacacionales; la arquitectura de Real Space Hub se parametriza para tu producto.</p>
+    </div>
+    
+    <div class="flex flex-wrap gap-4">
+      {cases.map((useCase) => (
+        <div class={`px-6 py-4 rounded-xl border backdrop-blur text-theme-white font-medium hover:scale-105 transition-transform ${useCase.bg}`}>
+          {useCase.title}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

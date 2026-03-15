@@ -1,0 +1,63 @@
+---
+// Footer.astro
+const year = new Date().getFullYear();
+---
+<footer class="bg-primary border-t border-quaternary pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <!-- Logo and Description -->
+      <div class="col-span-1 md:col-span-2">
+        <a href="/" class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded bg-linear-to-tr from-quaternary to-primary border border-secondary flex items-center justify-center">
+            <div class="w-3 h-3 rounded-full bg-theme-white"></div>
+          </div>
+          <span class="text-theme-white font-bold text-2xl tracking-tight">Real Space Hub</span>
+        </a>
+        <p class="text-secondary max-w-sm">
+          Plataforma comercial para desarrolladores inmobiliarios. Acelera tus ventas con visualización interactiva y cotizaciones inteligentes.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="text-theme-white font-semibold mb-4">Producto</h4>
+        <ul class="space-y-3">
+          <li><a href="#problema" class="text-secondary hover:text-theme-white transition">Beneficios</a></li>
+          <li><a href="#showcase" class="text-secondary hover:text-theme-white transition">Casos de Uso</a></li>
+          <li><a href="#pricing" class="text-secondary hover:text-theme-white transition">Precios y Planes</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-theme-white font-semibold mb-4">Contacto</h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="mailto:ventas@realspacehub.com" class="text-secondary hover:text-theme-white transition flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+              ventas@realspacehub.com
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/521234567890" class="text-secondary hover:text-theme-white transition flex items-center gap-2">
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="border-t border-quaternary pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-secondary text-sm">
+        &copy; {year} Real Space Hub. Todos los derechos reservados.
+      </p>
+      <div class="flex gap-4">
+        <!-- Social placeholders -->
+        <a href="#" class="text-secondary hover:text-theme-white transition">Twitter</a>
+        <a href="#" class="text-secondary hover:text-theme-white transition">LinkedIn</a>
+        <a href="#" class="text-secondary hover:text-theme-white transition">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
