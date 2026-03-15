@@ -1,0 +1,73 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Aquí reemplazaremos este enlace con el tuyo de Calendly
+const CALENDLY_URL = "https://calendly.com/ventas-realspacehub/30min?month=2026-03"; 
+---
+
+<MainLayout 
+  title="Agenda una demo | Real Space Hub" 
+  description="Agenda una demostración personalizada y descubre cómo Real Space Hub puede transformar las ventas de tus desarrollos inmobiliarios."
+>
+  <Header />
+  
+  <main class="pt-24 pb-16 min-h-screen bg-gray-50 flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+        
+        <!-- Left Column: Copy & Bullets -->
+        <div class="p-8 lg:p-12 lg:w-5/12 bg-linear-to-b from-white to-gray-50 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-100">
+          <h1 class="text-4xl font-extrabold text-primary tracking-tight mb-4">
+            Agenda una demo personalizada
+          </h1>
+          <p class="text-lg text-quaternary mb-8">
+            Descubre cómo puedes vender tus propiedades más rápido con una experiencia digital interactiva y recorridos inmersivos.
+          </p>
+
+          <h3 class="text-xl font-bold text-primary mb-4">
+            En esta llamada de 30 minutos veremos:
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <span class="shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </span>
+              <span class="ml-3 text-quaternary">Demo de la plataforma interactiva en vivo</span>
+            </li>
+            <li class="flex items-start">
+              <span class="shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </span>
+              <span class="ml-3 text-quaternary">Casos de éxito de otros desarrolladores</span>
+            </li>
+            <li class="flex items-start">
+              <span class="shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </span>
+              <span class="ml-3 text-quaternary">Evaluación de cómo adaptarlo a tu proyecto actual</span>
+            </li>
+            <li class="flex items-start">
+              <span class="shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </span>
+              <span class="ml-3 text-quaternary">Resolución de cualquier duda sobre costos y tiempos</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column: Calendly Embed -->
+        <div class="lg:w-7/12 p-4 bg-white min-h-[700px] relative">
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget w-full h-full" data-url={CALENDLY_URL} style="min-width:320px;height:100%;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</MainLayout>
