@@ -3,8 +3,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// Recuerda cambiar este correo por el tuyo en FormSubmit
-const FORMSUBMIT_EMAIL = "ventas@realspacehub.com";
+
+const FORMSUBMIT_EMAIL = "1540ab98f6d075b794667e18031192b8";
 ---
 
 <MainLayout 
@@ -30,14 +30,10 @@ const FORMSUBMIT_EMAIL = "ventas@realspacehub.com";
         <form action={`https://formsubmit.co/${FORMSUBMIT_EMAIL}`} method="POST" class="space-y-6">
           
           <!-- Configuracion FormSubmit -->
-          <!-- Deshabilita el reCAPTCHA por defecto si prefieres (opcional) -->
           <input type="hidden" name="_captcha" value="false">
-          <!-- Página a la que redirige al enviar (puedes crear una página /gracias luego) -->
-          <!-- <input type="hidden" name="_next" value="https://realspacehub.com/thanks"> -->
-          <input type="hidden" name="_next" value="http://localhost:4321/thanks">
+          <input type="hidden" name="_next" value="https://realspacehub.com/thanks">
           <!-- Asunto del correo -->
           <input type="hidden" name="_subject" value="Nuevo Lead de Cotización - Real Space Hub">
-
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <!-- Nombre -->
             <div>
