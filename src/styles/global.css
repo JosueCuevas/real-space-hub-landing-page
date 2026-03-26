@@ -1,18 +1,39 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #131313;
-  --color-secondary: #A7A7A7;
-  --color-tertiary: #C3C3C3;
-  --color-quaternary: #474747;
-  --color-theme-white: #FFFFFF;
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-quaternary: var(--quaternary);
+  --color-theme-white: var(--theme-white);
 }
-:root {
-		--font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-	}
-	body {
-		font-family: var(--font-sans);
-	}
+
+@layer base {
+  :root {
+    /* Light mode */
+    --primary: #F9FAFB;
+    --secondary: #4B5563;
+    --tertiary: #374151;
+    --quaternary: #E5E7EB;
+    --theme-white: #111827;
+    
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  :root.dark {
+    /* Dark mode (Original) */
+    --primary: #131313;
+    --secondary: #A7A7A7;
+    --tertiary: #C3C3C3;
+    --quaternary: #474747;
+    --theme-white: #FFFFFF;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+}
 	
 	/* Subtle animations */
 	.fade-in {
