@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import portticaLogo from '../assets/logos/porttica.png';
+import sennseJuarezLogo from '../assets/logos/sennseJuarez.png';
+---
+
+<section class="py-12 bg-primary border-b border-quaternary/30 relative z-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <p class="text-sm font-semibold tracking-wider text-secondary uppercase mb-8">
+      Desarrollos exitosos que confían en nosotros
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-24">
+      <div class="transition-all duration-300 hover:scale-105 opacity-60 hover:opacity-100 grayscale hover:grayscale-0">
+        <a href="https://thelife3d.com/urbanaSpace/porttica" target="_blank" rel="noopener noreferrer">
+          <Image 
+            src={portticaLogo} 
+            alt="Porttica Desarrollos" 
+            class="h-16 md:h-20 w-auto object-contain invert dark:invert-0 transition-all duration-300"
+          />
+        </a>
+      </div>
+      <div class="transition-all duration-300 hover:scale-105 opacity-60 hover:opacity-100 grayscale hover:grayscale-0">
+        <a href="https://thelife3d.com/urbanaSpace/juarez/" target="_blank" rel="noopener noreferrer">
+          <Image 
+            src={sennseJuarezLogo} 
+            alt="Sennse Juárez" 
+            class="h-16 md:h-20 w-auto object-contain invert dark:invert-0 transition-all duration-300"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
